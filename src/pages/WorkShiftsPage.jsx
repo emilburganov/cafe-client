@@ -3,6 +3,10 @@ import {$fetch} from "../api";
 import {useNavigate} from "react-router-dom";
 import {RoleContext} from "../App";
 
+/**
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const WorkShiftsPage = () => {
     const [workShifts, setWorkShifts] = useState([]);
     const navigate = useNavigate();

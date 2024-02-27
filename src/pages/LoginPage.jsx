@@ -3,6 +3,10 @@ import {$fetch} from "../api";
 import {useNavigate} from "react-router-dom";
 import {AuthContext, RoleContext} from "../App";
 
+/**
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const LoginPage = () => {
     const form = useRef(null);
     const navigate = useNavigate();

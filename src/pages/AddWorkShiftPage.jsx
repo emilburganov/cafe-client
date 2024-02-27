@@ -2,6 +2,10 @@ import React, {useRef} from "react";
 import {$fetch} from "../api";
 import {useNavigate} from "react-router-dom";
 
+/**
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const AddWorkShiftPage = () => {
     const form = useRef(null);
     const navigate = useNavigate();

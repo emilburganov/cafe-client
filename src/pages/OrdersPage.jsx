@@ -1,8 +1,10 @@
-import React, {useContext, useEffect, useRef, useState} from "react";
-import {useParams} from "react-router-dom";
+import React, {useEffect, useRef, useState} from "react";
 import {$fetch} from "../api";
-import {RoleContext} from "../App";
 
+/**
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const WorkShiftsOrdersPage = () => {
     const [orders, setOrders] = useState([]);
     const form = useRef(null);

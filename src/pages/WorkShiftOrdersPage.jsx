@@ -3,6 +3,10 @@ import {useParams} from "react-router-dom";
 import {$fetch} from "../api";
 import {RoleContext} from "../App";
 
+/**
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const WorkShiftsOrdersPage = () => {
     const [orders, setOrders] = useState([]);
     const {role} = useContext(RoleContext);

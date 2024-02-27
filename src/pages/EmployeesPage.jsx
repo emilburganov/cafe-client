@@ -2,6 +2,10 @@ import React, {useEffect, useRef, useState} from "react";
 import {$fetch} from "../api";
 import {Link} from "react-router-dom";
 
+/**
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const EmployeesPage = () => {
     const [employees, setEmployees] = useState([]);
     const [workShifts, setWorkShifts] = useState([]);
@@ -69,19 +73,19 @@ const EmployeesPage = () => {
                     <h2>Добавление сотрудника на смену</h2>
                     <div>
                         <label htmlFor="user_id">Сотрудник</label>
-                        <select name="user_id" id="user_id">
-                            <option value="nothing" selected disabled>Выберите сотрудника:</option>
+                        <select name="user_id" id="user_id" defaultValue="nothing">
+                            <option value="nothing" disabled>Выберите сотрудника:</option>
                             {employees.map(employee =>
-                                <option value={employee.id}>{employee.name}</option>
+                                <option key={employee.id} value={employee.id}>{employee.name}</option>
                             )}
                         </select>
                     </div>
                     <div>
                         <label htmlFor="role">Смена</label>
-                        <select name="work_shift_id" id="work_shift_id">
-                            <option value="nothing" selected disabled>Выберите смену:</option>
+                        <select name="work_shift_id" defaultValue="nothing" id="work_shift_id">
+                            <option value="nothing" disabled>Выберите смену:</option>
                             {workShifts.map(workShift =>
-                                <option value={workShift.id}>{workShift.start} - {workShift.end}</option>
+                                <option key={workShift.id} value={workShift.id}>{workShift.start} - {workShift.end}</option>
                             )}
                         </select>
                     </div>

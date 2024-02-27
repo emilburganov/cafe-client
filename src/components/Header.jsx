@@ -3,6 +3,10 @@ import {Link, useNavigate} from "react-router-dom";
 import {$fetch} from "../api";
 import {AuthContext, RoleContext} from "../App";
 
+/**
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const Header = () => {
     const {isAuth, setAuth} = useContext(AuthContext);
     const navigate = useNavigate();

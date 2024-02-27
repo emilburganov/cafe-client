@@ -2,6 +2,10 @@ import React, {useRef} from "react";
 import {$fetch} from "../api";
 import {useNavigate} from "react-router-dom";
 
+/**
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const AddEmployeePage = () => {
     const form = useRef(null);
     const navigate = useNavigate();
@@ -9,6 +13,9 @@ const AddEmployeePage = () => {
     const addEmployee = async (event) => {
         event.preventDefault();
 
+        for (const pair of (new FormData(form.current)).entries()) {
+            console.log(pair[0], pair[1]);
+        }
         const result = await $fetch("/user", new FormData(form.current), "post");
 
         if (result) {
@@ -34,12 +41,12 @@ const AddEmployeePage = () => {
                 </div>
                 <div>
                     <label htmlFor="photo_file" className="photo_input">Фото</label>
-                    <input type="file" name="photo" id="photo_file"/>
+                    <input type="file" name="photo_file" id="photo_file"/>
                 </div>
                 <div>
                     <label htmlFor="role">Роль</label>
-                    <select name="role_id" id="role">
-                        <option value="nothing" selected disabled>Выберите роль:</option>
+                    <select name="role_id" id="role" defaultValue="nothing">
+                        <option value="nothing" disabled>Выберите роль:</option>
                         <option value="1">Администратор</option>
                         <option value="2">Официант</option>
                         <option value="3">Повар</option>

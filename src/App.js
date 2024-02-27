@@ -1,19 +1,23 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import {HashRouter, Route, Routes} from "react-router-dom";
-import AddEmployeePage from "./pages/AddEmployeePage";
-import LoginPage from "./pages/LoginPage";
 import {createContext, useEffect, useState} from "react";
-import EmployeesPage from "./pages/EmployeesPage";
-import WorkShiftsPage from "./pages/WorkShiftsPage";
-import AddWorkShiftPage from "./pages/AddWorkShiftPage";
-import WorkShiftsOrdersPage from "./pages/WorkShiftOrdersPage";
+import {HashRouter, Route, Routes} from "react-router-dom";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import AddEmployeePage from "./pages/AddEmployeePage";
 import AddOrderPage from "./pages/AddOrderPage";
+import AddWorkShiftPage from "./pages/AddWorkShiftPage";
+import EmployeesPage from "./pages/EmployeesPage";
+import LoginPage from "./pages/LoginPage";
 import OrdersPage from "./pages/OrdersPage";
+import WorkShiftsOrdersPage from "./pages/WorkShiftOrdersPage";
+import WorkShiftsPage from "./pages/WorkShiftsPage";
 
 export const AuthContext = createContext(null);
 export const RoleContext = createContext(null);
 
+/**
+ * @returns {JSX.Element}
+ * @constructor
+ */
 function App() {
     const [isAuth, setAuth] = useState(!!localStorage.getItem("token"));
     const [role, setRole] = useState(null);

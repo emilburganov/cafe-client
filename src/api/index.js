@@ -1,3 +1,9 @@
+/**
+ * @param route
+ * @param body
+ * @param method
+ * @returns {Promise<*|boolean>}
+ */
 export const $fetch = async (route, body = null, method = "get") => {
     const BASE_URL = "http://cafe-server/api-cafe";
     const url = new URL(BASE_URL + route);

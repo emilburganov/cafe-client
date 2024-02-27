@@ -2,6 +2,10 @@ import React, {useEffect, useRef, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {$fetch} from "../api";
 
+/**
+ * @returns {JSX.Element}
+ * @constructor
+ */
 const AddOrderPage = () => {
     const [workShifts, setWorkShifts] = useState([]);
     const form = useRef(null);
@@ -35,8 +39,8 @@ const AddOrderPage = () => {
                 <h2>Добавление заказа</h2>
                 <div>
                     <label htmlFor="role">Смена</label>
-                    <select name="work_shift_id" id="work_shift_id">
-                        <option value="nothing" selected disabled>Выберите смену:</option>
+                    <select name="work_shift_id" defaultValue="nothing" id="work_shift_id">
+                        <option value="nothing" disabled>Выберите смену:</option>
                         {workShifts.map(workShift =>
                             <option value={workShift.id}>{workShift.start} - {workShift.end}</option>
                         )}
